@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <!-- systeme encodage -->
+  <meta charset="UTF-8">
+  <!-- Intérorabilité navigateur -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Important  pour le responsive, indique que largeur site = largeur écran -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta title = important pour le référencement titre de la page lu par Google -->
+  <title>Snakynov</title>
+  <!-- meta description -->
+  <meta name="description" content="Jeu snake en JavaScript">
+  <!-- fichier du favicon -->
+  <link rel="icon" href="../assets/img/favicon.ico"/>
+  <!-- fichier css bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- fichier css de police google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Squada+One&display=swap" rel="stylesheet">
+  <!-- fichier de style css local -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <!-- Style de l'écran de jeu qui ne s'affiche pas tant que nous ne sommes pas connectés -->
+  <style>
+  #gameScreen {
+    display: none;
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="vh-100">
+    <div class="container h-100">
+
+      <div id="initialScreen" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <h1>
+              Snakynov
+            </h1>
+            <button
+              type="submit"
+              class="btn btn-outline-dark"
+              id="newGameButton"
+            >
+              Nouveau jeu 
+            </button>
+            <div class="form-group">
+              <input 
+                type="text" 
+                placeholder="Entrer votre code" 
+                id="gameCodeInput"/>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-outline-dark"
+              id="joinGameButton"
+            >
+              Rejoindre une partie
+            </button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+
+          <h1>Votre code est :<span id="gameCodeDisplay"></span></h1>
+
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sources des scripts JavaScript et de la librairie socket.io.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
